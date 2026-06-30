@@ -1,70 +1,152 @@
-# Getting Started with Create React App
+# Contacts Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive web application for managing personal contacts, built with React and utilizing JSON Server for data management.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📋 Overview
 
-### `yarn start`
+The Contacts Manager is a frontend application designed to display, view details of, and edit personal contact information. It provides a clean, user-friendly interface for managing a contact list, featuring intuitive navigation between list views, detailed contact views, and an editing form for updating contact details.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Features
 
-### `yarn test`
+### Core Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* **Contact List View**: Displays all stored contacts in an organized list with avatars.
+* **Detailed View**: Access detailed information for a specific contact, including name, email, date of birth, and phone numbers.
+* **Contact Editing**: Update existing contact information via a structured form.
+* **Dynamic Phone Numbers**: Ability to add or remove multiple phone number entries for a single contact.
+* **Search/Filter**: (Implemented in UI structure; data-backed by local JSON).
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠 Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Category | Technology |
+| --- | --- |
+| **Frontend** | React, JavaScript |
+| **UI Framework** | Material UI (MUI) |
+| **State Management** | React `useState` |
+| **API Client** | Axios |
+| **Database/Mock API** | JSON Server |
+| **Build Tool** | Create React App |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `yarn eject`
+## 📂 Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```text
+contacts/
+├── public/              # Static assets (index.html, icons)
+├── src/
+│   ├── components/      # UI components (ContactList, EditForm, SingleContact)
+│   ├── styles/          # Global styles
+│   ├── App.js           # Main application component
+│   ├── db.js            # Local data source
+│   └── index.js         # Entry point
+├── db.json              # Mock database for JSON Server
+└── package.json         # Project dependencies and scripts
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🚀 Getting Started
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Node.js (v14+)
+* Yarn (recommended)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installation
 
-### Code Splitting
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd contacts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Install dependencies:
+```bash
+yarn install
 
-### Making a Progressive Web App
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+3. Start the mock API server:
+```bash
+yarn database
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+4. Start the development server (in a separate terminal):
+```bash
+yarn start
 
-### `yarn build` fails to minify
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+---
+
+## 💾 Database
+
+The project uses `json-server` to mock a REST API. The data is persisted in `db.json`.
+
+* **Base URL**: `http://localhost:8080`
+* **Resource**: `/contacts`
+
+---
+
+## 📝 API Documentation
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `GET` | `/contacts` | Retrieve the list of all contacts. |
+
+---
+
+## ⚙️ Deployment
+
+This project can be deployed using standard React hosting services. Since it relies on a local `json-server` instance for backend functionality, for production deployment, the API calls should be updated to point to a persistent backend service (e.g., Firebase, Heroku, or a VPS).
+
+---
+
+## 🧪 Testing
+
+The project is bootstrapped with `Create React App` and includes `Testing Library` for component testing.
+
+* **Run tests**: `yarn test`
+
+---
+
+## 🔮 Future Improvements
+
+* **User Authentication**: Add secure login and registration.
+* **Cloud Storage**: Implement image uploads for contact avatars using services like AWS S3 or Cloudinary.
+* **Validation**: Add robust form validation for phone numbers and email formats using libraries like Formik or React Hook Form.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👤 Author
+
+**Arnav Maheshwari**
+
+---
+
+## 💡 Acknowledgements
+
+* [Create React App](https://github.com/facebook/create-react-app)
+* [Material UI](https://mui.com/)
+* [JSON Server](https://github.com/typicode/json-server)
